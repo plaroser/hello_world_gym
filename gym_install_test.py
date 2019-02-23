@@ -12,4 +12,8 @@ envirotment.reset() #Limpiamos y preparamos el entorno para tomar decisione
 for _ in range(2000): #Durante 2000 iteraciones
     envirotment.render() #Pintamos en pantalla la accion
     envirotment.step(envirotment.action_space.sample()) #Tomamos una decision aleatoria del conjunto disponibles
+    #next_state -> Object
+    #reward -> Float
+    #done -> Boolean
+    #info -> Dictionary
 envirotment.close() #Cerramos la sesion
