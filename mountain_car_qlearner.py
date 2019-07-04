@@ -67,9 +67,9 @@ def train(agent, environment):
         total_reward = 0.0
         while not done:
             action = agent.get_action(obs) # Acción elegida segun la equacion de Q-Learning
-            nex_obs, reward, done, info = environment.step(action)
-            agent.learn(obs, action, reward, nex_obs)
-            obs = nex_obs
+            next_obs, reward, done, info = environment.step(action)
+            agent.learn(obs, action, reward, next_obs)
+            obs = next_obs
             total_reward += reward
         
         if total_reward > best_reward:
@@ -86,7 +86,7 @@ def test(agent, environment, policy):
     total_reward = 0.0
     while not done:
         action = policy[agent.discretize(obs)] # acción que dictamina la politica que hemos entrenado
-        nex_obs, reward, done, info = environment.step(action)
+        next_obs, reward, done, info = environment.step(action)
         obs = next_obs
         total_reward += reward
     return total_reward
