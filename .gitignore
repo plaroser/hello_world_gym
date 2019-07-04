@@ -40,6 +40,9 @@ htmlcov/
 .tox/
 .coverage
 .coverage.*
+
+# Monitor output
+monitor_output
 .cache
 nosetests.xml
 coverage.xml
